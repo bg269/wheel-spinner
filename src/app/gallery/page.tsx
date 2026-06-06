@@ -70,8 +70,12 @@ export default function GalleryPage() {
         <GalleryGrid wheels={wheels} />
       </main>
 
-      <footer className="text-center py-6 text-xs text-gray-400 dark:text-gray-700">
-        Spin The Choice · <Link href="/" className="hover:text-violet-500 transition-colors">Create your own wheel</Link>
+      <footer className="text-center py-6 text-xs text-gray-400 dark:text-gray-700 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+        <Link href="/" className="hover:text-violet-500 transition-colors">Create your own wheel</Link>
+        <span aria-hidden="true">·</span>
+        <Link href="/about" className="hover:text-violet-500 transition-colors">About</Link>
+        <span aria-hidden="true">·</span>
+        <Link href="/privacy" className="hover:text-violet-500 transition-colors">Privacy Policy</Link>
       </footer>
     </div>
   );

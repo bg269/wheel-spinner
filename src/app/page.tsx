@@ -214,8 +214,12 @@ export default function Home() {
         </section>
 
         {/* ── Footer ─────────────────────────────────────────────── */}
-        <footer className="text-center py-4 text-xs text-gray-400 dark:text-gray-700 border-t border-gray-200 dark:border-gray-800">
-          Click the wheel or press SPIN · Spin The Choice
+        <footer className="text-center py-4 text-xs text-gray-400 dark:text-gray-700 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4">
+          <span>Click the wheel or press SPIN</span>
+          <span aria-hidden="true">·</span>
+          <Link href="/about" className="hover:text-violet-500 transition-colors">About</Link>
+          <span aria-hidden="true">·</span>
+          <Link href="/privacy" className="hover:text-violet-500 transition-colors">Privacy Policy</Link>
         </footer>
       </div>
 
