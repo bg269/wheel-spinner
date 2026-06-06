@@ -89,18 +89,24 @@ export default function Home() {
         <header className="sticky top-0 z-20 border-b border-gray-200/60 dark:border-gray-800/60 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <span className="text-2xl leading-none">🎡</span>
-              <span className="font-bold text-gray-900 dark:text-white tracking-tight text-lg">
+              <span className="text-2xl leading-none" aria-hidden="true">🎡</span>
+              <h1 className="font-bold text-gray-900 dark:text-white tracking-tight text-lg">
                 Spin The Choice
-              </span>
+              </h1>
             </div>
-            <HowToUse />
+            <div className="flex items-center gap-2">
+              <HowToUse />
               <ThemeToggle isDark={isDark} onToggle={() => setIsDark((d) => !d)} />
+            </div>
           </div>
         </header>
 
         {/* ── Main ───────────────────────────────────────────────── */}
         <main className="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 lg:py-12">
+          {/* Keyword-rich subtitle — visible to crawlers, subtle for users */}
+          <p className="text-center text-sm text-gray-400 dark:text-gray-600 mb-6 -mt-2">
+            Free classroom name picker · random student selector · online decision spinner
+          </p>
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
 
             {/* Left column: item editor — appears below wheel on mobile, left on desktop */}

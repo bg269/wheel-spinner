@@ -11,9 +11,9 @@ interface TemplatePickerProps {
 export default function TemplatePicker({ activeId, onSelect }: TemplatePickerProps) {
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+      <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
         Start from a template
-      </p>
+      </h3>
       <div className="grid grid-cols-2 gap-2">
         {TEMPLATES.map((t) => {
           const isActive = activeId === t.id;
