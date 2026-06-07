@@ -220,6 +220,8 @@ export default function Home() {
           <Link href="/about" className="hover:text-violet-500 transition-colors">About</Link>
           <span aria-hidden="true">·</span>
           <Link href="/privacy" className="hover:text-violet-500 transition-colors">Privacy Policy</Link>
+          <span aria-hidden="true">·</span>
+          <Link href="/contact" className="hover:text-violet-500 transition-colors">Contact</Link>
         </footer>
       </div>
 
