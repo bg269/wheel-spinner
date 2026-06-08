@@ -78,6 +78,8 @@ export default function GalleryPage() {
         <Link href="/privacy" className="hover:text-violet-500 transition-colors">Privacy Policy</Link>
         <span aria-hidden="true">·</span>
         <Link href="/contact" className="hover:text-violet-500 transition-colors">Contact</Link>
+        <span aria-hidden="true">·</span>
+        <Link href="/terms" className="hover:text-violet-500 transition-colors">Terms</Link>
       </footer>
     </div>
   );

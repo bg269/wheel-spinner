@@ -220,6 +220,8 @@ export default function AboutPage() {
         <Link href="/about" className="hover:text-violet-500 transition-colors">About</Link>
         {' · '}
         <Link href="/contact" className="hover:text-violet-500 transition-colors">Contact</Link>
+        {' · '}
+        <Link href="/terms" className="hover:text-violet-500 transition-colors">Terms</Link>
       </footer>
     </div>
   );

@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 };
 
 // ─── Site-wide metadata ───────────────────────────────────────────────────────
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spinthechoice.vercel.app';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spinthechoice.com';
 const TITLE = 'Spin The Choice – Beautiful Wheel Spinner for Random Decisions';
 const DESCRIPTION =
   'Free online wheel spinner for picking names, making decisions, and playing games. ' +

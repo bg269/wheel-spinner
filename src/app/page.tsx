@@ -213,6 +213,105 @@ export default function Home() {
           <GalleryGrid wheels={trendingWheels} mobileScroll />
         </section>
 
+        {/* ── Content sections (SEO) ────────────────────────────── */}
+        <div className="max-w-6xl mx-auto w-full px-4 sm:px-6 border-t border-gray-200 dark:border-gray-800">
+
+          {/* What is it */}
+          <section className="py-10 border-b border-gray-200 dark:border-gray-800">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              What is Spin The Choice?
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p>
+                Spin The Choice is a free online wheel spinner that makes random decisions fun,
+                fair, and instant. Whether you need to pick a random student in the classroom,
+                choose a winner for a giveaway, decide what to have for dinner, or settle a debate
+                between friends, our wheel spinner gives everyone an equal chance with one satisfying
+                spin.
+              </p>
+              <p>
+                Unlike a basic random number generator, our colourful spinning wheel creates
+                genuine excitement — students lean forward to see who gets picked, contestants
+                watch breathlessly during a prize draw, and friends cheer as the wheel slows toward
+                their option. There are no downloads, no accounts, and no cost. Just add your items
+                and spin.
+              </p>
+            </div>
+          </section>
+
+          {/* Features */}
+          <section className="py-10 border-b border-gray-200 dark:border-gray-800">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+              Everything you need in a wheel spinner
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { icon: '✏️', title: 'Add unlimited entries', body: 'Type names or options one per line — no limit on how many items you add. The wheel automatically resizes to fit all entries.' },
+                { icon: '🎨', title: 'Custom colours', body: 'Click any colour dot to open a full colour picker. Make every segment a unique colour to match your theme, team, or classroom.' },
+                { icon: '🔊', title: 'Sound effects', body: 'Satisfying tick sounds build tension as the wheel decelerates, followed by a cheer when the result lands. Volume is fully adjustable.' },
+                { icon: '🔗', title: 'Shareable links', body: 'Every wheel generates a unique URL you can share. Recipients can spin the exact same wheel from any device — no account needed.' },
+                { icon: '📋', title: 'Ready-made templates', body: 'Jump straight in with built-in templates for classrooms, dinner decisions, movie nights, and game picks. One click to load and go.' },
+                { icon: '🌙', title: 'Dark mode', body: 'Toggle between light and dark theme at any time. Dark mode is easier on the eyes for evening use and automatically matches your system preference.' },
+              ].map((f) => (
+                <div key={f.title} className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-5">
+                  <div className="text-2xl mb-2">{f.icon}</div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">{f.title}</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{f.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Use Cases */}
+          <section className="py-10 border-b border-gray-200 dark:border-gray-800">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              Popular use cases
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+              {[
+                { icon: '🎓', title: 'Classroom name picker', body: 'Teachers use Spin The Choice daily to pick students for questions, presentations, and reading turns. The Classroom template has 30 student names ready to go. Fair, fast, and keeps kids engaged.' },
+                { icon: '🎁', title: 'Giveaway & raffle draw', body: 'Add all your entrants and spin live on stream or at your event for a transparent, exciting draw. Share the wheel link so your audience can watch and verify the result is truly random.' },
+                { icon: '🍕', title: 'Dinner & meal decisions', body: 'End the "what shall we eat?" debate forever. Load up the Dinner Ideas template or add your own favourites and let the wheel pick tonight\'s meal. No more endless back-and-forth.' },
+                { icon: '🎲', title: 'Game night & parties', body: 'Spin to choose which game to play, assign teams, pick dare topics, or decide who goes first. The Game Night template includes Uno, Catan, Codenames, Pictionary, and more.' },
+              ].map((uc) => (
+                <div key={uc.title} className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">{uc.icon}</span>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">{uc.title}</h3>
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{uc.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* How to Use */}
+          <section className="py-10">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+              How to use the wheel spinner
+            </h2>
+            <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { n: '1', title: 'Add your items', body: 'Type names or choices into the list on the left — one per line. Or choose a template to get started in seconds.' },
+                { n: '2', title: 'Customise colours', body: 'Click any colour dot next to an item to change its wheel segment colour. Make it yours.' },
+                { n: '3', title: 'Click SPIN', body: 'Hit the big SPIN button or click directly on the wheel. Watch it spin with sound effects and build the excitement.' },
+                { n: '4', title: 'Share the result', body: 'Use the Share button to copy a link to your exact wheel. Anyone with the link can spin it from their own device.' },
+              ].map((step) => (
+                <li key={step.n} className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-5 flex gap-4">
+                  <span className="flex-none w-8 h-8 rounded-full bg-violet-100 dark:bg-violet-900/40 text-violet-600 dark:text-violet-400 font-bold text-sm flex items-center justify-center">
+                    {step.n}
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">{step.title}</h3>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{step.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+        </div>
+
         {/* ── Footer ─────────────────────────────────────────────── */}
         <footer className="text-center py-4 text-xs text-gray-400 dark:text-gray-700 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4">
           <span>Click the wheel or press SPIN</span>
@@ -222,6 +321,8 @@ export default function Home() {
           <Link href="/privacy" className="hover:text-violet-500 transition-colors">Privacy Policy</Link>
           <span aria-hidden="true">·</span>
           <Link href="/contact" className="hover:text-violet-500 transition-colors">Contact</Link>
+          <span aria-hidden="true">·</span>
+          <Link href="/terms" className="hover:text-violet-500 transition-colors">Terms</Link>
         </footer>
       </div>
 
