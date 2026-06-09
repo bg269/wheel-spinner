@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Classroom Wheel Spinner – Engage Your Students',
+  title: 'Classroom Wheel Spinner – Engage Your Students Better',
   description:
     'Learn how teachers use wheel spinners for random student selection. ' +
     'Free guide + classroom ideas.',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://spinthechoice.com/blog/classroom-wheel-spinner' },
   openGraph: {
-    title: 'Classroom Wheel Spinner – Engage Your Students',
+    title: 'Classroom Wheel Spinner – Engage Your Students Better',
     description:
       'Learn how teachers use wheel spinners for random student selection. Free guide + classroom ideas.',
     url: 'https://spinthechoice.com/blog/classroom-wheel-spinner',

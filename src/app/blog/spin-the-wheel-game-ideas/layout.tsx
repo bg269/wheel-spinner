@@ -1,24 +1,24 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '15 Spin the Wheel Game Ideas for Parties, Classrooms & Online',
+  title: 'How to Spin the Wheel – Game Ideas and Fun Uses',
   description:
-    'Creative spin the wheel game ideas for every occasion — party games, classroom activities, ' +
-    'ice-breakers, and virtual team games. All free with Spin The Choice.',
+    'Discover creative spin the wheel game ideas for parties, classrooms, and team activities. ' +
+    'History, modern uses, and setup guides for every idea.',
   keywords: [
     'spin the wheel game ideas',
     'spin the wheel games',
     'spin the wheel party game',
     'wheel spinner games',
     'classroom spin the wheel',
-    'virtual spin the wheel',
     'spin the wheel activities',
+    'spin the wheel business',
   ],
   alternates: { canonical: 'https://spinthechoice.com/blog/spin-the-wheel-game-ideas' },
   openGraph: {
-    title: '15 Spin the Wheel Game Ideas for Parties, Classrooms & Online',
+    title: 'How to Spin the Wheel – Game Ideas and Fun Uses',
     description:
-      '15 creative ways to use a wheel spinner — from party dare wheels to classroom review games.',
+      'Creative spin the wheel game ideas for parties, classrooms, and team activities.',
     url: 'https://spinthechoice.com/blog/spin-the-wheel-game-ideas',
     type: 'article',
   },
