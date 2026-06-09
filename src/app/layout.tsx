@@ -18,11 +18,11 @@ export const viewport: Viewport = {
 
 // ─── Site-wide metadata ───────────────────────────────────────────────────────
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spinthechoice.com';
-const TITLE = 'Spin The Choice – Beautiful Wheel Spinner for Random Decisions';
+const TITLE = 'Spin The Choice – Wheel Spinner for Classroom & Teachers';
 const DESCRIPTION =
-  'Free online wheel spinner for picking names, making decisions, and playing games. ' +
-  'Customizable colors, sound effects, dark mode. ' +
-  'Perfect for classrooms, giveaways, and parties.';
+  'Free classroom wheel spinner and random name picker for teachers. ' +
+  'Pick students fairly, run giveaways, and make decisions instantly. ' +
+  'Customizable colors, sound effects, dark mode — no login needed.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

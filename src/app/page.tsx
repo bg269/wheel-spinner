@@ -91,7 +91,7 @@ export default function Home() {
             <div className="flex items-center gap-2.5">
               <span className="text-2xl leading-none" aria-hidden="true">🎡</span>
               <h1 className="font-bold text-gray-900 dark:text-white tracking-tight text-lg">
-                Spin The Choice
+                Spin The Choice — Classroom Wheel Spinner
               </h1>
             </div>
             <div className="flex items-center gap-2">
@@ -105,7 +105,7 @@ export default function Home() {
         <main className="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 lg:py-12">
           {/* Keyword-rich subtitle — visible to crawlers, subtle for users */}
           <p className="text-center text-sm text-gray-400 dark:text-gray-600 mb-6 -mt-2">
-            Free classroom name picker · random student selector · online decision spinner
+            Free random name picker for teachers · classroom wheel spinner · online decision tool
           </p>
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
 
@@ -219,7 +219,7 @@ export default function Home() {
           {/* What is it */}
           <section className="py-10 border-b border-gray-200 dark:border-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-              What is Spin The Choice?
+              What is Spin The Choice? The free classroom wheel spinner for teachers
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               <p>
@@ -265,7 +265,7 @@ export default function Home() {
           {/* Use Cases */}
           <section className="py-10 border-b border-gray-200 dark:border-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-              Popular use cases
+              Popular use cases — from classrooms to game nights
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               {[
