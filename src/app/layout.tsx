@@ -20,9 +20,9 @@ export const viewport: Viewport = {
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://spinthechoice.com';
 const TITLE = 'Spin The Choice – Wheel Spinner for Classroom & Teachers';
 const DESCRIPTION =
-  'Free classroom wheel spinner and random name picker for teachers. ' +
-  'Pick students fairly, run giveaways, and make decisions instantly. ' +
-  'Customizable colors, sound effects, dark mode — no login needed.';
+  'Spin the wheel to pick names, make decisions, and play yes or no wheel spinner games — free! ' +
+  'The best classroom random name picker for teachers. ' +
+  'No login, works on any device.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -37,14 +37,16 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
 
   keywords: [
+    'spin the wheel',
     'wheel spinner',
+    'yes or no wheel spinner',
     'random picker',
     'name selector',
     'decision maker',
     'classroom name picker',
     'random student selector',
     'online decision spinner',
-    'spin the wheel',
+    'spin the wheel game',
     'name picker wheel',
     'giveaway spinner',
     'random wheel',
