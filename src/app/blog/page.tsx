@@ -2,6 +2,56 @@ import Link from 'next/link';
 
 const POSTS = [
   {
+    slug: 'truth-or-dare-wheel',
+    emoji: '🎭',
+    tag: 'Games & Fun',
+    title: 'Truth or Dare Wheel – The Ultimate Setup Guide',
+    description:
+      '50+ truth questions and dare ideas organised by intensity, plus five game variations and tips for running the best game night. Set up in seconds with a free wheel spinner.',
+    date: 'June 2025',
+    readTime: '9 min read',
+  },
+  {
+    slug: 'birthday-party-wheel-games',
+    emoji: '🎂',
+    tag: 'Parties',
+    title: 'Birthday Party Wheel Games – 10 Ideas for Every Age',
+    description:
+      'Ten birthday party wheel games for kids, teens, and adults — from prize spinners and dance challenges to forfeit wheels and destination pickers. Setup guide for each.',
+    date: 'June 2025',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'drinking-game-wheel',
+    emoji: '🎰',
+    tag: 'Adults (18+)',
+    title: 'Drinking Game Wheel – Rules, Ideas & Setup Guide',
+    description:
+      '50+ drinking wheel rules, four game variations, a non-alcoholic version for mixed groups, and responsible play guidance. Everything you need for adult game night.',
+    date: 'June 2025',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'decision-wheel-maker',
+    emoji: '🎯',
+    tag: 'Decisions',
+    title: 'Decision Wheel Maker – How to Build and Use One',
+    description:
+      'The psychology of why randomness helps decisions, when a decision wheel actually works, how to build one correctly, and eight real-world use cases with example entries.',
+    date: 'June 2025',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'best-wheel-spinner-comparison',
+    emoji: '🏆',
+    tag: 'Tools',
+    title: 'Best Wheel Spinner Tools – Honest Comparison for 2025',
+    description:
+      'What actually matters in a free wheel spinner, a feature comparison table, and recommendations by use case — classrooms, parties, and business teams.',
+    date: 'June 2025',
+    readTime: '7 min read',
+  },
+  {
     slug: 'classroom-wheel-spinner',
     emoji: '🎓',
     tag: 'Classroom',
@@ -27,7 +77,7 @@ const POSTS = [
     tag: 'Games & Fun',
     title: 'How to Spin the Wheel – Game Ideas and Fun Uses',
     description:
-      'From party dare wheels to classroom review games to business team activities — everything you can do when you spin the wheel, with setup guides for each idea.',
+      'History of the spinning wheel, modern uses across parties, classrooms, and business, plus game ideas with setup guides for every occasion.',
     date: 'June 2025',
     readTime: '8 min read',
   },
