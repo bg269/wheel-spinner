@@ -1,8 +1,32 @@
 import type { MetadataRoute } from 'next';
+import { VARIANTS } from '@/lib/variants';
 
 const BASE = 'https://spinthechoice.com';
 
+const SEEDED_WHEEL_SLUGS = [
+  'dinner-ideas',
+  'movie-night',
+  'team-lunch',
+  'weekend-activity',
+  'chores',
+  'ice-cream',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  const variantPages: MetadataRoute.Sitemap = VARIANTS.map((v) => ({
+    url: `${BASE}/${v.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.9,
+  }));
+
+  const trendingWheelPages: MetadataRoute.Sitemap = SEEDED_WHEEL_SLUGS.map((slug) => ({
+    url: `${BASE}/wheels/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
+
   return [
     {
       url: BASE,
@@ -10,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1.0,
     },
+    ...variantPages,
     {
       url: `${BASE}/blog`,
       lastModified: new Date(),
@@ -82,6 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    ...trendingWheelPages,
     {
       url: `${BASE}/about`,
       lastModified: new Date(),

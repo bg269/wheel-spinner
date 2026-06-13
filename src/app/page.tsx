@@ -312,6 +312,34 @@ export default function Home() {
 
         </div>
 
+        {/* ── Popular wheels ─────────────────────────────────────── */}
+        <section className="max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 border-t border-gray-200 dark:border-gray-800">
+          <h2 className="text-sm font-semibold text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-4">
+            Popular wheels
+          </h2>
+          <ul className="flex flex-wrap gap-2">
+            {[
+              { slug: 'yes-or-no-wheel',      label: 'Yes or No Wheel' },
+              { slug: 'random-number-wheel',   label: 'Random Number Wheel' },
+              { slug: 'random-letter-picker',  label: 'Random Letter Picker' },
+              { slug: 'what-to-eat-wheel',     label: 'What to Eat Wheel' },
+              { slug: 'truth-or-dare-wheel',   label: 'Truth or Dare Wheel' },
+              { slug: 'team-picker-wheel',     label: 'Team Picker Wheel' },
+              { slug: 'heads-or-tails-wheel',  label: 'Heads or Tails Wheel' },
+              { slug: 'random-name-picker',    label: 'Random Name Picker' },
+            ].map(({ slug, label }) => (
+              <li key={slug}>
+                <Link
+                  href={`/${slug}`}
+                  className="inline-block px-3 py-1.5 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-xs font-medium text-gray-600 dark:text-gray-400 hover:border-violet-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* ── Footer ─────────────────────────────────────────────── */}
         <footer className="text-center py-4 text-xs text-gray-400 dark:text-gray-700 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4">
           <span>Click the wheel or press SPIN</span>
