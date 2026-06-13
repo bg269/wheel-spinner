@@ -17,12 +17,19 @@ interface PageProps {
 // React.cache deduplicates the DB call across generateMetadata + page render
 // within a single server request.
 const getDbWheel = cache(async (slug: string) => {
+  // TEMP LOGGING — remove after diagnosing production 404
+  console.log('[getDbWheel] slug:', slug);
+  console.log('[getDbWheel] SUPABASE_URL prefix:', process.env.NEXT_PUBLIC_SUPABASE_URL?.slice(0, 60));
   const { data, error } = await supabaseAdmin
     .from('wheels')
     .select('slug, title, entries')
     .eq('slug', slug)
     .single();
-  if (error || !data) return null;
+  if (error || !data) {
+    console.error('[getDbWheel] miss — error:', JSON.stringify(error), '| data:', data);
+    return null;
+  }
+  console.log('[getDbWheel] hit:', data.slug, '|', data.title);
   return data as {
     slug: string;
     title: string | null;
@@ -83,7 +90,10 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
 export default async function WheelSlugPage({ params, searchParams }: PageProps) {
   const { slug } = await params;
   const { data: dataParam } = await searchParams;
+  // TEMP LOGGING — remove after diagnosing production 404
+  console.log('[WheelSlugPage] hit — slug:', slug, '| dataParam present:', !!dataParam);
   const resolved = await resolveWheel(slug, dataParam);
+  console.log('[WheelSlugPage] resolved:', resolved ? `fromDb=${resolved.fromDb} items=${resolved.items.length}` : 'null → notFound()');
 
   if (!resolved) return notFound();
 
