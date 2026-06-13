@@ -15,7 +15,18 @@ interface GalleryGridProps {
   mobileScroll?: boolean;
 }
 
+// Wheels seeded into the DB with stable slugs — use clean URLs for these.
+const SEEDED_SLUGS = new Set([
+  'dinner-ideas',
+  'movie-night',
+  'team-lunch',
+  'weekend-activity',
+  'chores',
+  'ice-cream',
+]);
+
 function wheelHref(wheel: GalleryWheel): string {
+  if (SEEDED_SLUGS.has(wheel.id)) return `/wheels/${wheel.id}`;
   const items = wheel.items.map((item, i) => ({
     id: String(i),
     name: item.name,

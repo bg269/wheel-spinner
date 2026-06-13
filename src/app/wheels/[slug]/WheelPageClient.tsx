@@ -1,23 +1,23 @@
 'use client';
 
-import { use, useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
 import WheelCanvas, { type WheelCanvasHandle } from '@/components/WheelCanvas';
 import ResultModal from '@/components/ResultModal';
 import ThemeToggle from '@/components/ThemeToggle';
 import type { WheelItem } from '@/lib/types';
-import { decodeWheelData } from '@/lib/share';
 import { scheduleSpinTicks, playCheer } from '@/lib/audio';
 import { track } from '@vercel/analytics';
+import { incrementSpinCount } from './actions';
 
-export default function SharedWheelPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ data?: string }>;
-}) {
-  const { data } = use(searchParams);
-  const items = data ? decodeWheelData(data) : [];
+interface Props {
+  items: WheelItem[];
+  /** Non-null when the wheel was loaded from the database. */
+  slug: string | null;
+  title: string | null;
+}
 
+export default function WheelPageClient({ items, slug, title }: Props) {
   const [isSpinning, setIsSpinning] = useState(false);
   const [winner, setWinner] = useState<WheelItem | null>(null);
   const [isDark, setIsDark] = useState(false);
@@ -37,7 +37,9 @@ export default function SharedWheelPage({
     cleanupTicksRef.current?.();
     cleanupTicksRef.current = null;
     playCheer(0.7);
-  }, []);
+    // Fire-and-forget spin count for DB wheels
+    if (slug) incrementSpinCount(slug).catch(() => {});
+  }, [slug]);
 
   const handleSpinAgain = useCallback(() => {
     setWinner(null);
@@ -45,20 +47,6 @@ export default function SharedWheelPage({
   }, []);
 
   const canSpin = items.length >= 2 && !isSpinning;
-
-  if (items.length === 0) {
-    return (
-      <div className={`min-h-screen flex flex-col items-center justify-center gap-4 bg-gray-50 dark:bg-gray-950 ${isDark ? 'dark' : ''}`}>
-        <p className="text-gray-500 dark:text-gray-400 text-lg">Wheel not found or link is invalid.</p>
-        <Link
-          href="/"
-          className="px-5 py-2.5 rounded-xl bg-violet-600 text-white text-sm font-semibold hover:bg-violet-500 transition-colors"
-        >
-          Create your own wheel →
-        </Link>
-      </div>
-    );
-  }
 
   return (
     <div className={`min-h-screen flex flex-col ${isDark ? 'dark' : ''}`}>
@@ -73,7 +61,7 @@ export default function SharedWheelPage({
                 Spin The Choice
               </span>
               <span className="hidden sm:inline text-xs text-gray-400 dark:text-gray-600 ml-1">
-                — shared wheel
+                {title ? `— ${title}` : '— shared wheel'}
               </span>
             </div>
             <div className="flex items-center gap-3">
@@ -130,7 +118,10 @@ export default function SharedWheelPage({
           {/* Entry list — read-only */}
           <div className="w-full bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm">
             <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-              Entries <span className="text-gray-400 dark:text-gray-600 font-normal ml-1">{items.length}</span>
+              Entries{' '}
+              <span className="text-gray-400 dark:text-gray-600 font-normal ml-1">
+                {items.length}
+              </span>
             </p>
             <div className="flex flex-col gap-1.5">
               {items.map((item, i) => (
@@ -139,7 +130,9 @@ export default function SharedWheelPage({
                     className="flex-none w-3.5 h-3.5 rounded-full shadow-sm"
                     style={{ backgroundColor: item.color }}
                   />
-                  <span className="text-xs text-gray-400 dark:text-gray-600 tabular-nums w-5">{i + 1}.</span>
+                  <span className="text-xs text-gray-400 dark:text-gray-600 tabular-nums w-5">
+                    {i + 1}.
+                  </span>
                   <span className="text-sm text-gray-700 dark:text-gray-300">{item.name}</span>
                 </div>
               ))}
@@ -160,7 +153,7 @@ export default function SharedWheelPage({
           onClose={() => setWinner(null)}
           onSpinAgain={handleSpinAgain}
           onRemoveAndSpin={() => {
-            // Read-only — removing is disabled; just spin again
+            // Read-only page — just spin again
             setWinner(null);
             setTimeout(() => wheelRef.current?.spin(), 80);
           }}
