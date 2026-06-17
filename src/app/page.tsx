@@ -21,18 +21,20 @@ import { track } from '@vercel/analytics';
 
 const trendingWheels = getTrending(6);
 
-const DEFAULT_ITEMS: WheelItem[] = [
-  'Alice', 'Bob', 'Charlie', 'Diana', 'Ethan', 'Fiona',
-].map((name, i) => ({ id: nanoid(), name, color: getDefaultColor(i) }));
-
 export default function Home() {
-  const [items, setItems] = useState<WheelItem[]>(DEFAULT_ITEMS);
+  const [items, setItems] = useState<WheelItem[]>(() =>
+    ['Alice', 'Bob', 'Charlie', 'Diana', 'Ethan', 'Fiona'].map((name, i) => ({
+      id: nanoid(),
+      name,
+      color: getDefaultColor(i),
+    }))
+  );
   const [isSpinning, setIsSpinning] = useState(false);
   const [winner, setWinner] = useState<WheelItem | null>(null);
   const [isDark, setIsDark] = useState(false);
   const [soundMode, setSoundMode] = useState<SoundMode>('both');
-  // Stable ID for this wheel session — becomes the DB key when a backend is added
-  const [wheelId] = useState(() => generateWheelId());
+  // Empty on server; set client-side so the share URL is never part of SSR HTML.
+  const [wheelId, setWheelId] = useState('');
   const [volume, setVolume] = useState(0.7);
   const wheelRef = useRef<WheelCanvasHandle>(null);
   const cleanupTicksRef = useRef<(() => void) | null>(null);
@@ -40,10 +42,11 @@ export default function Home() {
   const itemsRef = useRef(items);
   useEffect(() => { itemsRef.current = items; }, [items]);
 
-  // Initialise dark mode from system preference on mount
+  // Client-only initialisation: dark mode + stable wheel ID
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     setIsDark(mq.matches);
+    setWheelId(generateWheelId());
   }, []);
 
   const handleSpinStart = useCallback((durationMs: number) => {
@@ -182,8 +185,8 @@ export default function Home() {
                 />
               </div>
 
-              {/* Share panel — only shown when there's something to share */}
-              {items.length >= 2 && (
+              {/* Share panel — deferred until wheelId is set client-side */}
+              {items.length >= 2 && wheelId && (
                 <div className="w-full pt-2 border-t border-gray-200 dark:border-gray-800">
                   <SharePanel wheelId={wheelId} items={items} />
                 </div>
