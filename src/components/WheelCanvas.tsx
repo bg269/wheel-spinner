@@ -142,6 +142,14 @@ const WheelCanvas = forwardRef<WheelCanvasHandle, WheelCanvasProps>(
       ctx.strokeStyle = 'rgba(0,0,0,0.15)';
       ctx.lineWidth = 1.5;
       ctx.stroke();
+
+      // TEMP DIAGNOSTIC — remove after diagnosing canvas flicker
+      const rect = canvas.getBoundingClientRect();
+      console.log('[WheelCanvas draw]', {
+        attrW: canvas.width, attrH: canvas.height,
+        cssW: Math.round(rect.width), cssH: Math.round(rect.height),
+        offsetW: canvas.offsetWidth, offsetH: canvas.offsetHeight,
+      });
     }, []);
 
     useEffect(() => {
