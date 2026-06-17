@@ -5,6 +5,7 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
+  useLayoutEffect,
   useRef,
 } from 'react';
 import type { WheelItem } from '@/lib/types';
@@ -34,7 +35,6 @@ const WheelCanvas = forwardRef<WheelCanvasHandle, WheelCanvasProps>(
     const isSpinningRef = useRef(isSpinning);
     const itemsRef = useRef(items);
     useEffect(() => { isSpinningRef.current = isSpinning; }, [isSpinning]);
-    useEffect(() => { itemsRef.current = items; }, [items]);
 
     const draw = useCallback((rotation: number) => {
       const canvas = canvasRef.current;
@@ -143,18 +143,18 @@ const WheelCanvas = forwardRef<WheelCanvasHandle, WheelCanvasProps>(
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // TEMP DIAGNOSTIC — remove after diagnosing canvas flicker
-      const rect = canvas.getBoundingClientRect();
-      console.log('[WheelCanvas draw]', {
-        attrW: canvas.width, attrH: canvas.height,
-        cssW: Math.round(rect.width), cssH: Math.round(rect.height),
-        offsetW: canvas.offsetWidth, offsetH: canvas.offsetHeight,
-      });
     }, []);
 
-    useEffect(() => {
-      draw(rotationRef.current);
-    }, [draw, items]);
+    // Runs synchronously after every React commit, before the browser paints.
+    // This redraws the canvas even when React clears it by assigning canvas.width
+    // (React reconciles the SSR "600" string against the JSX 600 number, which
+    // always resets the drawing buffer even when the value is unchanged).
+    useLayoutEffect(() => {
+      itemsRef.current = items;
+      if (!isSpinningRef.current) {
+        draw(rotationRef.current);
+      }
+    });
 
     const spin = useCallback(() => {
       if (isSpinningRef.current || itemsRef.current.length < 2) return;
