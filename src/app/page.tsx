@@ -120,7 +120,7 @@ export default function Home() {
             </div>
 
             {/* Right column: wheel + spin button — appears first on mobile */}
-            <div className="flex-1 flex flex-col items-center gap-8 order-first lg:order-last">
+            <div className="w-full min-w-0 flex-1 flex flex-col items-center gap-8 order-first lg:order-last">
               {/* Ambient glow behind the wheel */}
               <div className="relative w-full flex justify-center">
                 {items[0] && (
