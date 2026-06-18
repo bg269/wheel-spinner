@@ -24,7 +24,7 @@ export default function VariantPageClient({ config, initialItems, relatedConfigs
   const [isSpinning, setIsSpinning] = useState(false);
   const [winner, setWinner] = useState<WheelItem | null>(null);
   const [isDark, setIsDark] = useState(false);
-  const [wheelId] = useState(() => generateWheelId());
+  const [wheelId, setWheelId] = useState('');
   const wheelRef = useRef<WheelCanvasHandle>(null);
   const cleanupTicksRef = useRef<(() => void) | null>(null);
   const itemsRef = useRef(items);
@@ -33,6 +33,7 @@ export default function VariantPageClient({ config, initialItems, relatedConfigs
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     setIsDark(mq.matches);
+    setWheelId(generateWheelId());
   }, []);
 
   const handleSpinStart = useCallback((durationMs: number) => {
@@ -114,7 +115,7 @@ export default function VariantPageClient({ config, initialItems, relatedConfigs
                 </div>
 
                 {/* Wheel column */}
-                <div className="flex-1 flex flex-col items-center gap-6 p-6">
+                <div className="w-full min-w-0 flex-1 flex flex-col items-center gap-6 p-6">
                   <div className="relative w-full flex justify-center">
                     {items[0] && (
                       <div
@@ -167,7 +168,7 @@ export default function VariantPageClient({ config, initialItems, relatedConfigs
                     </p>
                   )}
 
-                  {items.length >= 2 && (
+                  {items.length >= 2 && wheelId && (
                     <div className="w-full border-t border-gray-200 dark:border-gray-800 pt-4">
                       <SharePanel wheelId={wheelId} items={items} />
                     </div>
