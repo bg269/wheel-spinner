@@ -38,6 +38,8 @@ const WheelCanvas = forwardRef<WheelCanvasHandle, WheelCanvasProps>(
 
     const draw = useCallback((rotation: number) => {
       const canvas = canvasRef.current;
+      // TEMP: log every draw attempt so we can see null vs present
+      console.log('[WC draw] canvas:', canvas ? `${canvas.width}x${canvas.height}` : 'NULL');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
@@ -151,6 +153,8 @@ const WheelCanvas = forwardRef<WheelCanvasHandle, WheelCanvasProps>(
     // always resets the drawing buffer even when the value is unchanged).
     useLayoutEffect(() => {
       itemsRef.current = items;
+      // TEMP: confirm effect fires and ref state
+      console.log('[WC layout] canvas:', canvasRef.current ? 'PRESENT' : 'NULL', '| spinning:', isSpinningRef.current);
       if (!isSpinningRef.current) {
         draw(rotationRef.current);
       }
