@@ -72,6 +72,16 @@ const POSTS = [
     readTime: '7 min read',
   },
   {
+    slug: 'calling-on-students-fairly',
+    emoji: '🙋',
+    tag: 'Teachers',
+    title: 'How to Call on Students Fairly (Without Anyone Saying "You Never Pick Me")',
+    description:
+      'Why fair participation is harder than it looks, the four most common approaches teachers use, and how no-repeat random selection puts an end to "you never pick me" for good.',
+    date: 'June 2025',
+    readTime: '5 min read',
+  },
+  {
     slug: 'spin-the-wheel-game-ideas',
     emoji: '🎡',
     tag: 'Games & Fun',
