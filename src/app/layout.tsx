@@ -92,6 +92,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+
+  // ── Search Console verification ────────────────────────────────────────────
+  verification: {
+    google: '59b6ce50c4053baf',
+  },
 };
 
 // ─── JSON-LD structured data ─────────────────────────────────────────────────
