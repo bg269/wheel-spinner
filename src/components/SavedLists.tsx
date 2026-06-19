@@ -214,6 +214,10 @@ export default function SavedLists({ items, onLoad }: Props) {
           ))}
         </div>
       )}
+
+      <p className="text-[11px] text-gray-400 dark:text-gray-500 leading-relaxed">
+        💡 Teachers: save your class list once and reuse it every day — stored on this device, no login needed.
+      </p>
     </div>
   );
 }
