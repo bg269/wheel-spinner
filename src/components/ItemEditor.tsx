@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { WheelItem } from '@/lib/types';
 import { getDefaultColor } from '@/lib/colors';
 import { nanoid } from '@/lib/utils';
 import TemplatePicker from '@/components/TemplatePicker';
+import SavedLists from '@/components/SavedLists';
 import type { Template } from '@/data/templates';
 
 interface ItemEditorProps {
@@ -64,6 +65,14 @@ export default function ItemEditor({ items, onChange }: ItemEditorProps) {
     onChange(items.filter((item) => item.id !== id));
   };
 
+  const handleSavedListLoad = useCallback(
+    (newItems: WheelItem[]) => {
+      setActiveTemplateId(null);
+      onChange(newItems);
+    },
+    [onChange],
+  );
+
   const shuffle = () => {
     const copy = [...items];
     for (let i = copy.length - 1; i > 0; i--) {
@@ -79,6 +88,10 @@ export default function ItemEditor({ items, onChange }: ItemEditorProps) {
     <div className="flex flex-col gap-5">
       {/* Template picker */}
       <TemplatePicker activeId={activeTemplateId} onSelect={handleTemplateSelect} />
+
+      <div className="border-t border-gray-100 dark:border-gray-800" />
+
+      <SavedLists items={items} onLoad={handleSavedListLoad} />
 
       <div className="border-t border-gray-100 dark:border-gray-800" />
 
