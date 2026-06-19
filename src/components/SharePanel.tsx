@@ -14,21 +14,26 @@ type SaveState = 'idle' | 'saving' | 'done';
 
 export default function SharePanel({ wheelId, items }: SharePanelProps) {
   const [saveState, setSaveState] = useState<SaveState>('idle');
-  const [cleanUrl, setCleanUrl] = useState<string | null>(null);
+  // Slug returned from the DB save — used to derive the display URL.
+  // The actual shared/copied URL always includes ?data= so it's self-contained
+  // even if the DB row is later unavailable (Supabase free tier auto-pauses).
+  const [cleanSlug, setCleanSlug] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
-  // Fallback URL (old ?data= format) — always works even if the API is down
+  // Fallback URL (?data= format) — always works even if the API is down
   const fallbackUrl = buildShareUrl(wheelId, items);
-  const activeUrl = cleanUrl ?? fallbackUrl;
+  // Display only: strip ?data= once we have a DB slug so the box looks clean
+  const activeUrl = cleanSlug
+    ? `${typeof window !== 'undefined' ? window.location.origin : 'https://spinthechoice.com'}/wheels/${cleanSlug}`
+    : fallbackUrl;
 
-  // Reset the saved URL whenever the wheel's content changes so stale slugs
-  // aren't shared after the user edits the wheel.
+  // Reset whenever wheel content changes so stale slugs aren't shared
   const itemsSig = items.map((i) => `${i.name}\0${i.color}`).join('|');
   const itemsSigRef = useRef(itemsSig);
   useEffect(() => {
     if (itemsSigRef.current !== itemsSig) {
       itemsSigRef.current = itemsSig;
-      setCleanUrl(null);
+      setCleanSlug(null);
       setSaveState('idle');
       setCopied(false);
     }
@@ -39,7 +44,8 @@ export default function SharePanel({ wheelId, items }: SharePanelProps) {
   const pendingRef = useRef<Promise<string> | null>(null);
 
   const getOrSaveUrl = useCallback(async (): Promise<string> => {
-    if (cleanUrl) return cleanUrl;
+    // Already saved — return the full self-contained URL (slug + ?data= fallback)
+    if (cleanSlug) return buildShareUrl(cleanSlug, items);
     if (pendingRef.current) return pendingRef.current;
 
     setSaveState('saving');
@@ -54,11 +60,11 @@ export default function SharePanel({ wheelId, items }: SharePanelProps) {
       .then(async (res) => {
         if (!res.ok) throw new Error('save failed');
         const { slug } = (await res.json()) as { slug: string };
-        const url = `https://spinthechoice.com/wheels/${slug}`;
-        setCleanUrl(url);
+        setCleanSlug(slug);
         setSaveState('done');
         pendingRef.current = null;
-        return url;
+        // Always include ?data= so the URL works even if the DB row is gone later
+        return buildShareUrl(slug, items);
       })
       .catch(() => {
         setSaveState('idle');
@@ -68,7 +74,7 @@ export default function SharePanel({ wheelId, items }: SharePanelProps) {
 
     pendingRef.current = p;
     return p;
-  }, [cleanUrl, fallbackUrl, items]);
+  }, [cleanSlug, fallbackUrl, items]);
 
   const copyToClipboard = async (url: string) => {
     try {
