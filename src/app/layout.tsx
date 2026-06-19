@@ -95,7 +95,7 @@ export const metadata: Metadata = {
 
   // ── Search Console verification ────────────────────────────────────────────
   verification: {
-    google: '59b6ce50c4053baf',
+    google: ['59b6ce50c4053baf', 'bYXUMSAFsH6Mm5-FxBRYSjHlSmJXWmvKFt22WefUUmY'],
   },
 };
 
