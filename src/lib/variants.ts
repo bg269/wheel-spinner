@@ -114,7 +114,7 @@ export const VARIANTS: VariantConfig[] = [
       },
       {
         q: "Does it remember my number range if I come back later?",
-        a: "Not by default — the wheel resets to 1–10 on a fresh visit. Use the Share button to save your custom range as a permanent link you can bookmark.",
+        a: "Not by default — the wheel resets to 1–10 on a fresh visit. But you can save your custom range with the Save list button: give it a name and next time you visit in the same browser your saved numbers will be waiting to load back in with one click. No login or account needed.",
       },
     ],
     related: ['yes-or-no-wheel', 'random-letter-picker', 'team-picker-wheel'],
@@ -338,7 +338,7 @@ export const VARIANTS: VariantConfig[] = [
       },
       {
         q: 'Can I save a version with my team names for future use?',
-        a: "Yes — after editing the labels, click Share to get a permanent link. Bookmark it and load the same custom team wheel next time.",
+        a: "Yes — click 'Save list' to store your team names on this device under a name you choose. Next time you visit the same page in the same browser, your saved list will be waiting to load back in with one click. There's no login or account needed, and you can save as many lists as you like or delete ones you no longer need.",
       },
     ],
     related: ['random-name-picker', 'random-number-wheel', 'yes-or-no-wheel'],
@@ -417,7 +417,7 @@ export const VARIANTS: VariantConfig[] = [
       'Replace the sample names in the editor with your class list or group members.',
       'Hit SPIN or click the wheel — the selected name is highlighted when it stops.',
       "Remove a name after they've been called if you don't want repeat picks in the same session.",
-      'Save your class list with the Share button and bookmark the link for daily use.',
+      'Use the Save list button to store your class names on this device and reload them in one click next lesson.',
     ],
     faqs: [
       {
@@ -430,7 +430,7 @@ export const VARIANTS: VariantConfig[] = [
       },
       {
         q: 'Can I save my class list for next time?',
-        a: "Yes — use the Share button to get a permanent link to your wheel with all names saved. Bookmark it and open it at the start of each lesson.",
+        a: "Yes — click 'Save list' to store your entries on this device under a name you choose (like 'Year 9 Science'). Next time you visit the same page in the same browser, your saved list will be waiting to load back in with one click. There's no login or account needed, and you can save as many lists as you like or delete ones you no longer need.",
       },
       {
         q: "What's a good way to introduce this to students for the first time?",
