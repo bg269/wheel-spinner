@@ -330,6 +330,7 @@ export default function Home() {
               { slug: 'team-picker-wheel',     label: 'Team Picker Wheel' },
               { slug: 'heads-or-tails-wheel',  label: 'Heads or Tails Wheel' },
               { slug: 'random-name-picker',    label: 'Random Name Picker' },
+              { slug: 'brain-break-wheel',     label: 'Brain Break Wheel' },
             ].map(({ slug, label }) => (
               <li key={slug}>
                 <Link

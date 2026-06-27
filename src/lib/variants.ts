@@ -391,6 +391,66 @@ export const VARIANTS: VariantConfig[] = [
   },
 
   {
+    slug: 'brain-break-wheel',
+    h1: 'Brain Break Wheel — Spin for a Quick Classroom Activity',
+    metaTitle: 'Brain Break Wheel — Free Classroom Activity Spinner',
+    metaDescription:
+      'Spin the brain break wheel to pick a fun classroom activity in seconds. 12 activities pre-loaded — star jumps, dance party, deep breaths, and more.',
+    intro: [
+      "Attention is not infinite. After twenty or thirty minutes of focused work, most students hit a wall where concentration drops sharply and the returns of sitting still are near zero. A brain break resets that — two minutes of movement, breathing, or a quick creative activity is enough to bring focus back and make the next stretch of learning land more effectively.",
+      "The challenge is choosing an activity fast, without losing the momentum you've built. If you spend thirty seconds deciding what to do, the class has already started chatting. The brain break wheel solves that: spin it, see what lands, and go. The element of surprise also helps — students engage more when they didn't know what was coming.",
+      "Use it whenever energy dips mid-lesson, as a transition between tasks, before a test to shake out nerves, or as a reward at the end of a focused work block. The twelve pre-loaded activities work in a standard classroom with no equipment needed. Swap in your own favourites using the editor, and save your list on the device so it's ready every time you open the page.",
+    ],
+    entries: [
+      { name: '10 star jumps',         color: '#EF4444' },
+      { name: 'Dance party (30 sec)',   color: '#F97316' },
+      { name: 'Stretch it out',         color: '#EAB308' },
+      { name: 'Simon Says',             color: '#84CC16' },
+      { name: 'Deep breaths ×5',        color: '#22C55E' },
+      { name: 'Shake it out',           color: '#14B8A6' },
+      { name: 'Quick doodle',           color: '#06B6D4' },
+      { name: 'Desk drumming',          color: '#3B82F6' },
+      { name: 'Silly walk on the spot', color: '#A855F7' },
+      { name: 'Eye rest (window)',       color: '#EC4899' },
+      { name: 'Partner high-fives',     color: '#A16207' },
+      { name: 'Freeze dance',           color: '#6B7280' },
+    ],
+    howToUse: [
+      'Watch for the signs — glazed eyes, restlessness, or slumping posture — and spin when focus dips.',
+      'Hit SPIN or click the wheel to land on a random brain break activity.',
+      'Lead the class through it together. Most activities take 30–60 seconds; resist letting it drag longer.',
+      'Use the Save list button to add your own favourite activities and build a list that suits your class.',
+    ],
+    faqs: [
+      {
+        q: 'How long should a brain break last?',
+        a: "Thirty seconds to two minutes is the sweet spot. Short enough that you don't lose lesson time, long enough to actually shift the energy. Star jumps and deep breaths work in under a minute; Simon Says or freeze dance can stretch to two minutes if the class is into it. Set a timer so it doesn't creep.",
+      },
+      {
+        q: 'How often should I use brain breaks?',
+        a: "Research suggests sustained attention peaks at around 20–30 minutes for most school-aged students, so one brain break per 25–30 minutes of focused work is a sensible rule of thumb. You can also use them reactively — spin when you notice attention dropping rather than waiting for a fixed interval.",
+      },
+      {
+        q: 'Can I save my own list of brain-break activities?',
+        a: "Yes — click 'Save list' to store your custom activities on this device under a name you choose. Next time you open the page in the same browser, your saved list loads back in with one click. No login or account needed. You can save multiple lists — one for your Year 5 class, another for your Year 9s.",
+      },
+      {
+        q: 'How do I project this on the classroom board?',
+        a: "Open the page on your device, connect to the projector or interactive whiteboard, then press F11 on Windows (or use your browser's View menu to enter fullscreen) to fill the screen. The wheel is large enough to be clearly visible from the back of the room. On a tablet, use your device's screen-mirroring or cast feature.",
+      },
+      {
+        q: 'Are these activities suitable for all year groups?',
+        a: 'The pre-loaded activities suit most primary and lower secondary classes. Some, like partner high-fives or silly walk on the spot, land better with younger students. For older classes you might swap in desk stretches, a quick sketch, or a breathing exercise. Edit the list to match your cohort — it takes about thirty seconds.',
+      },
+      {
+        q: 'What if my classroom has limited space?',
+        a: "Several activities work at desks with no movement required: Quick doodle, Deep breaths ×5, Desk drumming, and Eye rest (window) all work seated. If space is tight, delete the standing activities from the editor and you'll have a desk-friendly brain break wheel.",
+      },
+    ],
+    related: ['random-name-picker', 'team-picker-wheel', 'yes-or-no-wheel'],
+  },
+
+  {
     slug: 'random-name-picker',
     h1: 'Random Name Picker — Spin the Wheel to Pick a Name',
     metaTitle: 'Random Name Picker Wheel — Free for Teachers | Spin The Choice',
