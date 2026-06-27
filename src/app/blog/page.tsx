@@ -82,6 +82,16 @@ const POSTS = [
     readTime: '5 min read',
   },
   {
+    slug: 'brain-breaks-quick-classroom-activities',
+    emoji: '🧠',
+    tag: 'Teachers',
+    title: 'Brain Breaks: 10 Quick Activities to Reset a Restless Class',
+    description:
+      'Ten brain break activities that work in under two minutes, why they prevent attention from sliding, and how a brain break wheel makes choosing one effortless.',
+    date: 'June 2025',
+    readTime: '5 min read',
+  },
+  {
     slug: 'spin-the-wheel-game-ideas',
     emoji: '🎡',
     tag: 'Games & Fun',
