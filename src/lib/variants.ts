@@ -297,6 +297,64 @@ export const VARIANTS: VariantConfig[] = [
   },
 
   {
+    slug: 'game-night-wheel',
+    h1: 'Game Night Wheel — Spin to Pick What to Play',
+    metaTitle: 'Game Night Wheel — Spin to Pick What to Play Tonight',
+    metaDescription:
+      'Spin the game night wheel to settle the "what should we play?" debate. 10 classics pre-loaded — Uno, Catan, Charades, and more. No login needed.',
+    intro: [
+      "Every game night has the same opening act: someone suggests Catan, someone else pushes for Uno, a third person floats Charades, and twenty minutes later you're still negotiating. The game night wheel ends that. One spin settles the debate in three seconds, and because the result is visibly random, there's nothing to argue about — the wheel decided.",
+      "The wheel works best when everyone agrees to honor the result before you spin. That one-second commitment is what makes it feel fair. The suspense of the wheel slowing down and landing on a game is genuinely fun — more fun, often, than the fifteen-minute negotiation it replaces.",
+      "Ten classics come pre-loaded: Charades, Truth or Dare, Pictionary, Uno, Jenga, Codenames, Catan, Monopoly, Werewolf, and Trivial Pursuit. Edit the list to match what's actually on your shelf — remove anything you don't own, add niche favorites your group loves, and save your custom list so it's ready at the start of next game night.",
+    ],
+    entries: [
+      { name: 'Charades',        color: '#EF4444' },
+      { name: 'Truth or Dare',   color: '#F97316' },
+      { name: 'Pictionary',      color: '#EAB308' },
+      { name: 'Uno',             color: '#84CC16' },
+      { name: 'Jenga',           color: '#22C55E' },
+      { name: 'Codenames',       color: '#14B8A6' },
+      { name: 'Catan',           color: '#06B6D4' },
+      { name: 'Monopoly',        color: '#3B82F6' },
+      { name: 'Werewolf',        color: '#A855F7' },
+      { name: 'Trivial Pursuit', color: '#EC4899' },
+    ],
+    howToUse: [
+      'Start with the 10 pre-loaded games or edit the list to match what you actually own.',
+      'Get everyone to agree to honor the result before you spin — then hit SPIN.',
+      'Set up the winning game and play. Spin again if you want a different pick next time.',
+      'Use the Save list button to store your custom game collection so it loads instantly next game night.',
+    ],
+    faqs: [
+      {
+        q: 'What games come pre-loaded on the game night wheel?',
+        a: 'Charades, Truth or Dare, Pictionary, Uno, Jenga, Codenames, Catan, Monopoly, Werewolf, and Trivial Pursuit — a mix of party games, board games, and card games to cover most collections.',
+      },
+      {
+        q: 'Can I add my own games to the wheel?',
+        a: "Yes — open the editor and replace or add entries with whatever's on your shelf. Delete anything you don't own, add niche favorites your group loves, and the wheel resizes automatically. There's no limit on entries.",
+      },
+      {
+        q: 'Can I save my custom games list for next time?',
+        a: "Yes — click 'Save list' to store your games on this device under a name you choose. Next time you visit the same page in the same browser, your saved list will be waiting to load back in with one click. No login or account needed, and you can save multiple lists — one for your family, one for your friend group.",
+      },
+      {
+        q: "What if someone refuses to play the game it landed on?",
+        a: "That's what the pre-spin agreement is for. Before you spin, everyone commits to playing whatever the wheel picks. If a game genuinely won't work (missing pieces, someone unfamiliar with the rules), remove it from the wheel before you spin rather than vetoing after.",
+      },
+      {
+        q: 'Does this work for two players?',
+        a: 'Yes — just make sure the games on your wheel work for two. Charades and Werewolf need bigger groups, but Uno, Jenga, and Codenames all play well with two. Edit the list to only include games that suit your group size.',
+      },
+      {
+        q: 'How do I split into teams after picking the game?',
+        a: 'Use the Team Picker Wheel — spin it once per player to assign everyone to a team. Pair it with this wheel and you have a full game night sorted in under a minute.',
+      },
+    ],
+    related: ['what-to-eat-wheel', 'truth-or-dare-wheel', 'yes-or-no-wheel'],
+  },
+
+  {
     slug: 'team-picker-wheel',
     h1: 'Team Picker Wheel — Randomly Assign Players to Teams',
     metaTitle: 'Team Picker Wheel — Random Team Generator | Spin The Choice',
