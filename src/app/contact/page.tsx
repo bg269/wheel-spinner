@@ -50,23 +50,6 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
 
-      {/* ── Header ──────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-20 border-b border-gray-200/60 dark:border-gray-800/60 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <span className="text-2xl leading-none">🎡</span>
-            <span className="font-bold text-gray-900 dark:text-white tracking-tight text-lg group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-              Spin The Choice
-            </span>
-          </Link>
-          <Link
-            href="/"
-            className="text-sm font-semibold text-violet-600 dark:text-violet-400 hover:underline"
-          >
-            ← Back to spinner
-          </Link>
-        </div>
-      </header>
 
       {/* ── Main ────────────────────────────────────────────────────── */}
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
@@ -267,18 +250,6 @@ export default function ContactPage() {
         </div>
       </main>
 
-      {/* ── Footer ──────────────────────────────────────────────────── */}
-      <footer className="text-center py-6 text-xs text-gray-400 dark:text-gray-700 border-t border-gray-200 dark:border-gray-800 mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-        <Link href="/" className="hover:text-violet-500 transition-colors">Spin The Choice</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/about" className="hover:text-violet-500 transition-colors">About</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/privacy" className="hover:text-violet-500 transition-colors">Privacy Policy</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/contact" className="hover:text-violet-500 transition-colors">Contact</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/terms" className="hover:text-violet-500 transition-colors">Terms</Link>
-      </footer>
     </div>
   );
 }

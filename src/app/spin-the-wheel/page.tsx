@@ -23,17 +23,6 @@ export default function SpinTheWheelPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Header */}
-      <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-4">
-          <Link
-            href="/"
-            className="text-violet-600 dark:text-violet-400 hover:text-violet-700 transition-colors text-sm font-medium"
-          >
-            ← Back to Spin The Choice
-          </Link>
-        </div>
-      </header>
 
       {/* Hero */}
       <div className="bg-gradient-to-br from-violet-600 to-indigo-600 text-white">
@@ -324,22 +313,6 @@ export default function SpinTheWheelPage() {
 
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-gray-800 py-6 text-center text-xs text-gray-400 dark:text-gray-600 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4">
-        <Link href="/" className="hover:text-violet-500 transition-colors">Home</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/classroom" className="hover:text-violet-500 transition-colors">Classroom</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/gallery" className="hover:text-violet-500 transition-colors">Gallery</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/about" className="hover:text-violet-500 transition-colors">About</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/privacy" className="hover:text-violet-500 transition-colors">Privacy Policy</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/contact" className="hover:text-violet-500 transition-colors">Contact</Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/terms" className="hover:text-violet-500 transition-colors">Terms</Link>
-      </footer>
     </div>
   );
 }

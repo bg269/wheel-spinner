@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 import './globals.css';
 
 const inter = Inter({
@@ -133,9 +135,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Apply dark class before paint to prevent flash */}
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}` }} />
       </head>
       <body style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
+        <SiteHeader />
         {children}
+        <SiteFooter />
         <Analytics />
       </body>
     </html>

@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import WheelCanvas, { type WheelCanvasHandle } from '@/components/WheelCanvas';
 import ItemEditor from '@/components/ItemEditor';
 import ResultModal from '@/components/ResultModal';
-import ThemeToggle from '@/components/ThemeToggle';
 import SoundSettings from '@/components/SoundSettings';
 import SharePanel from '@/components/SharePanel';
 import type { WheelItem } from '@/lib/types';
@@ -14,7 +13,6 @@ import { getDefaultColor } from '@/lib/colors';
 import { nanoid } from '@/lib/utils';
 import GalleryGrid from '@/components/GalleryGrid';
 import AdSpace from '@/components/AdSpace';
-import HowToUse from '@/components/HowToUse';
 import { getTrending } from '@/data/gallery';
 import Link from 'next/link';
 import { track } from '@vercel/analytics';
@@ -31,7 +29,6 @@ export default function Home() {
   );
   const [isSpinning, setIsSpinning] = useState(false);
   const [winner, setWinner] = useState<WheelItem | null>(null);
-  const [isDark, setIsDark] = useState(false);
   const [soundMode, setSoundMode] = useState<SoundMode>('both');
   // Empty on server; set client-side so the share URL is never part of SSR HTML.
   const [wheelId, setWheelId] = useState('');
@@ -42,10 +39,7 @@ export default function Home() {
   const itemsRef = useRef(items);
   useEffect(() => { itemsRef.current = items; }, [items]);
 
-  // Client-only initialisation: dark mode + stable wheel ID
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDark(mq.matches);
     setWheelId(generateWheelId());
   }, []);
 
@@ -84,25 +78,8 @@ export default function Home() {
   const canSpin = items.length >= 2 && !isSpinning;
 
   return (
-    // `dark` class here scopes all dark: Tailwind utilities to this subtree
-    <div className={`min-h-screen flex flex-col ${isDark ? 'dark' : ''}`}>
+    <div className="min-h-screen flex flex-col">
       <div className="flex-1 flex flex-col bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
-
-        {/* ── Header ─────────────────────────────────────────────── */}
-        <header className="sticky top-0 z-20 border-b border-gray-200/60 dark:border-gray-800/60 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <span className="text-2xl leading-none" aria-hidden="true">🎡</span>
-              <h1 className="font-bold text-gray-900 dark:text-white tracking-tight text-lg">
-                Spin The Choice — Classroom Wheel Spinner
-              </h1>
-            </div>
-            <div className="flex items-center gap-2">
-              <HowToUse />
-              <ThemeToggle isDark={isDark} onToggle={() => setIsDark((d) => !d)} />
-            </div>
-          </div>
-        </header>
 
         {/* ── Main ───────────────────────────────────────────────── */}
         <main className="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 lg:py-12">
@@ -345,20 +322,6 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* ── Footer ─────────────────────────────────────────────── */}
-        <footer className="text-center py-4 text-xs text-gray-400 dark:text-gray-700 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4">
-          <span>Click the wheel or press SPIN</span>
-          <span aria-hidden="true">·</span>
-          <Link href="/blog" className="hover:text-violet-500 transition-colors">Blog</Link>
-          <span aria-hidden="true">·</span>
-          <Link href="/about" className="hover:text-violet-500 transition-colors">About</Link>
-          <span aria-hidden="true">·</span>
-          <Link href="/privacy" className="hover:text-violet-500 transition-colors">Privacy Policy</Link>
-          <span aria-hidden="true">·</span>
-          <Link href="/contact" className="hover:text-violet-500 transition-colors">Contact</Link>
-          <span aria-hidden="true">·</span>
-          <Link href="/terms" className="hover:text-violet-500 transition-colors">Terms</Link>
-        </footer>
       </div>
 
       {/* Winner modal */}

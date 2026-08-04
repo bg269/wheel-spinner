@@ -5,7 +5,6 @@ import Link from 'next/link';
 import WheelCanvas, { type WheelCanvasHandle } from '@/components/WheelCanvas';
 import ItemEditor from '@/components/ItemEditor';
 import ResultModal from '@/components/ResultModal';
-import ThemeToggle from '@/components/ThemeToggle';
 import SharePanel from '@/components/SharePanel';
 import type { WheelItem } from '@/lib/types';
 import { scheduleSpinTicks, playCheer } from '@/lib/audio';
@@ -23,7 +22,6 @@ export default function VariantPageClient({ config, initialItems, relatedConfigs
   const [items, setItems] = useState(initialItems);
   const [isSpinning, setIsSpinning] = useState(false);
   const [winner, setWinner] = useState<WheelItem | null>(null);
-  const [isDark, setIsDark] = useState(false);
   const [wheelId, setWheelId] = useState('');
   const wheelRef = useRef<WheelCanvasHandle>(null);
   const cleanupTicksRef = useRef<(() => void) | null>(null);
@@ -31,8 +29,6 @@ export default function VariantPageClient({ config, initialItems, relatedConfigs
   useEffect(() => { itemsRef.current = items; }, [items]);
 
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDark(mq.matches);
     setWheelId(generateWheelId());
   }, []);
 
@@ -66,29 +62,8 @@ export default function VariantPageClient({ config, initialItems, relatedConfigs
   const canSpin = items.length >= 2 && !isSpinning;
 
   return (
-    <div className={`min-h-screen flex flex-col ${isDark ? 'dark' : ''}`}>
+    <div className="min-h-screen flex flex-col">
       <div className="flex-1 flex flex-col bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
-
-        {/* Header */}
-        <header className="sticky top-0 z-20 border-b border-gray-200/60 dark:border-gray-800/60 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="text-2xl leading-none" aria-hidden="true">🎡</span>
-              <span className="font-bold text-gray-900 dark:text-white tracking-tight text-lg">
-                Spin The Choice
-              </span>
-            </Link>
-            <div className="flex items-center gap-3">
-              <Link
-                href="/"
-                className="text-xs font-semibold text-violet-600 dark:text-violet-400 hover:underline"
-              >
-                Make your own →
-              </Link>
-              <ThemeToggle isDark={isDark} onToggle={() => setIsDark((d) => !d)} />
-            </div>
-          </div>
-        </header>
 
         <main className="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-10 space-y-14">
 
@@ -236,19 +211,6 @@ export default function VariantPageClient({ config, initialItems, relatedConfigs
           </section>
 
         </main>
-
-        {/* Footer */}
-        <footer className="text-center py-4 text-xs text-gray-400 dark:text-gray-700 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4">
-          <Link href="/" className="hover:text-violet-500 transition-colors">Home</Link>
-          <span aria-hidden="true">·</span>
-          <Link href="/gallery" className="hover:text-violet-500 transition-colors">Gallery</Link>
-          <span aria-hidden="true">·</span>
-          <Link href="/blog" className="hover:text-violet-500 transition-colors">Blog</Link>
-          <span aria-hidden="true">·</span>
-          <Link href="/privacy" className="hover:text-violet-500 transition-colors">Privacy</Link>
-          <span aria-hidden="true">·</span>
-          <Link href="/contact" className="hover:text-violet-500 transition-colors">Contact</Link>
-        </footer>
 
       </div>
 
