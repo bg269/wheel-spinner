@@ -2,6 +2,16 @@ import Link from 'next/link';
 
 const POSTS = [
   {
+    slug: '50-easy-dinner-ideas',
+    emoji: '🍽️',
+    tag: 'Food & Decisions',
+    title: '50 Easy Dinner Ideas When You Can\'t Decide What to Cook',
+    description:
+      '50 easy dinner ideas organised by category — one-pot, 30-minute, budget, healthy, and comfort food — plus a free meal spinner wheel that will just pick for you.',
+    date: 'August 2025',
+    readTime: '9 min read',
+  },
+  {
     slug: 'truth-or-dare-wheel',
     emoji: '🎭',
     tag: 'Games & Fun',
