@@ -44,7 +44,7 @@ const MINDFULNESS = [
   { n: '19', name: '4-7-8 breathing', body: 'Breathe in for 4 counts, hold for 7, breathe out for 8. One round takes 19 seconds. The extended exhale activates the parasympathetic nervous system, physically reducing heart rate within seconds. Effective for pre-assessment anxiety.' },
   { n: '20', name: 'Body scan check-in', body: 'Starting at the feet, mentally move attention up through the body, noting sensations without judgement. Takes 90 seconds. Works better for teenagers than it sounds — the scanning quality is focused enough to hold attention.' },
   { n: '21', name: 'Word association reset', body: 'Call out a word — students say (or write) the first word that comes to mind, not the "correct" answer. Removes evaluation pressure, activates associative thinking, and creates a light moment of shared non-academic response.' },
-  { n: '22', name: 'Eyes closed, three things', body: 'Lights normal, students close eyes. Name three things you can hear right now. Then three things you can feel. Opens again in 60 seconds. Brief enough for teenagers who'd resist longer mindfulness exercises.' },
+  { n: '22', name: 'Eyes closed, three things', body: 'Lights normal, students close eyes. Name three things you can hear right now. Then three things you can feel. Opens again in 60 seconds. Brief enough for teenagers who would resist longer mindfulness exercises.' },
 ];
 
 const TIPS = [
@@ -61,8 +61,7 @@ const TIPS = [
   {
     emoji: '🎡',
     title: 'Use a random selector to remove the awkward volunteer moment',
-    body: 'Asking "who wants to choose?" in a teen classroom often produces silence. A{' '}
-    <Link href="/brain-break-wheel" className="text-violet-600 dark:text-violet-400 hover:underline">brain break wheel</Link>{' '} picks without anyone having to volunteer. Spin the wheel, do what it lands on, move on. The randomness also reduces the perception that the teacher has an agenda behind the choice.',
+    body: 'Asking "who wants to choose?" in a teen classroom often produces silence. A brain break wheel (spinthechoice.com/brain-break-wheel) picks without anyone having to volunteer. Spin the wheel, do what it lands on, move on. The randomness also reduces the perception that the teacher has an agenda behind the choice.',
   },
   {
     emoji: '📵',
