@@ -2,6 +2,36 @@ import Link from 'next/link';
 
 const POSTS = [
   {
+    slug: 'brain-breaks-for-teenagers',
+    emoji: '🎓',
+    tag: 'Teachers',
+    title: 'Brain Breaks for Teenagers – Keep High School Students Engaged',
+    description:
+      'Brain breaks built for high school students — movement, creative, social, and mindfulness activities that work with teen psychology, not against it.',
+    date: 'August 2025',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'brain-breaks-office-productivity',
+    emoji: '🏢',
+    tag: 'Productivity',
+    title: 'Quick Brain Breaks for the Office – Boost Employee Productivity',
+    description:
+      'Science-backed brain breaks for office workers — desk stretches, mindfulness micro-breaks, social resets, and movement ideas that genuinely improve focus and output.',
+    date: 'August 2025',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'brain-breaks-remote-learning',
+    emoji: '💻',
+    tag: 'Remote Learning',
+    title: 'Brain Break Ideas for Remote Learning & Zoom Classes',
+    description:
+      'The best brain breaks for remote learning and Zoom classes — screen-free movement, on-camera social moments, desk stretches, and mindfulness breaks that actually work virtually.',
+    date: 'August 2025',
+    readTime: '8 min read',
+  },
+  {
     slug: '50-easy-dinner-ideas',
     emoji: '🍽️',
     tag: 'Food & Decisions',
