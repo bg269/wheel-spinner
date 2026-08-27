@@ -509,6 +509,69 @@ export const VARIANTS: VariantConfig[] = [
   },
 
   {
+    slug: 'brain-breaks-office',
+    h1: 'Office Brain Breaks Wheel',
+    metaTitle: 'Office Brain Breaks Wheel — Spin for Quick Energy Boosters',
+    metaDescription:
+      'Spin our office brain breaks wheel to get a random 5-minute wellness activity. Boost productivity, reduce stress, and re-energise your team — no equipment needed.',
+    intro: [
+      "Sustained focus depletes faster than most people realise. After 50–60 minutes at a desk, the quality of your work starts sliding — errors creep in, decisions get slower, and the next paragraph won't come. A two-minute brain break resets the clock. Not a scrolling break, not a coffee — an actual physical or mental pause that gives your directed attention system time to recover.",
+      "The office brain break wheel takes the friction out of choosing. Spin it, do what it lands on, come back. Fifteen activities cover the full range: movement breaks that restore alertness through blood flow, stretches that undo the postural damage of prolonged sitting, eye rests that address screen fatigue, and creative or social breaks that switch your cognitive mode entirely.",
+      "Use it at the end of a focused work block, between back-to-back meetings, or any time you notice yourself re-reading the same sentence. Load it on a shared screen in a team standup and spin a group break together — the shared suspense of the spin is a small social moment worth having.",
+    ],
+    entries: [
+      { name: 'Neck Rolls (1 min)',        color: '#1B9BA3' },
+      { name: 'Shoulder Shrugs (1 min)',   color: '#E91E63' },
+      { name: 'Spinal Twist (2 min)',      color: '#FFC107' },
+      { name: 'Wrist Stretches (1 min)',   color: '#002B54' },
+      { name: 'Desk Push-ups (1 min)',     color: '#1B9BA3' },
+      { name: 'Stair Climbing (2 min)',    color: '#E91E63' },
+      { name: 'Wall Sits (1 min)',         color: '#FF8F00' },
+      { name: 'High Knees (1 min)',        color: '#1565C0' },
+      { name: '20-20-20 Eye Rule (1 min)', color: '#26C6DA' },
+      { name: 'Eye Circles (1 min)',       color: '#C2185B' },
+      { name: 'Meditation (3 min)',        color: '#FFC107' },
+      { name: 'Doodle Break (3 min)',      color: '#002B54' },
+      { name: 'Quick Chat (5 min)',        color: '#1B9BA3' },
+      { name: 'Walk Around (5 min)',       color: '#E91E63' },
+      { name: 'Laugh Break (2 min)',       color: '#FF8F00' },
+    ],
+    howToUse: [
+      'Hit SPIN NOW or click the wheel to land on a random brain break activity.',
+      'Step away from your screen and do the activity for the full duration shown.',
+      'Edit the wheel to swap in your own favourite activities or remove ones that don\'t suit your office.',
+      'Share the link with your team so everyone can spin the same wheel — great for a team break during a standup.',
+    ],
+    faqs: [
+      {
+        q: 'How long do office brain breaks take?',
+        a: 'The activities on this wheel range from 1 to 5 minutes. Most desk stretches and movement breaks are 1–2 minutes; social breaks like Quick Chat or Walk Around build in a bit more time. The duration is shown on each segment and in the result so you always know what you\'re committing to.',
+      },
+      {
+        q: 'Do office brain breaks actually improve productivity?',
+        a: 'Yes — with solid research support. A 2011 University of Illinois study found that brief diversions from a task dramatically improved sustained attention over time compared to unbroken work blocks. Movement breaks specifically trigger noradrenaline release, which sharpens focus for 20–30 minutes after the break.',
+      },
+      {
+        q: 'Can I use this for a team break during a meeting?',
+        a: 'Absolutely. Screen-share the wheel in your next standup or video call and spin it together. The shared suspense as the wheel slows down is a quick social moment, and doing a group stretch or high knees at the same time is more effective than doing it solo.',
+      },
+      {
+        q: 'What if I can\'t do standing activities at my desk?',
+        a: 'Edit the wheel and remove any activities that don\'t suit your setup. Neck Rolls, Shoulder Shrugs, Spinal Twist, Wrist Stretches, 20-20-20 Eye Rule, Eye Circles, Meditation, and Doodle Break all work fully seated. Remove the standing ones and you have a desk-only brain break wheel.',
+      },
+      {
+        q: 'How often should I use the brain break wheel at work?',
+        a: 'The research sweet spot is a 5–17 minute break every 52 minutes of focused work (based on productivity data from DeskTime). A practical approach: set a recurring 50-minute timer, spin the wheel when it goes off, and do the activity before starting the next work block.',
+      },
+      {
+        q: 'Can I add my own activities to the wheel?',
+        a: 'Yes — open the editor on the left and add, remove, or rename entries. Add activities specific to your office (a nearby park route for Walk Around, a specific colleague for Quick Chat) and save the link to come back to your custom wheel.',
+      },
+    ],
+    related: ['brain-break-wheel', 'yes-or-no-wheel', 'what-to-eat-wheel'],
+  },
+
+  {
     slug: 'random-name-picker',
     h1: 'Random Name Picker — Spin the Wheel to Pick a Name',
     metaTitle: 'Random Name Picker Wheel — Free for Teachers | Spin The Choice',
